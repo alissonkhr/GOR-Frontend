@@ -1,3 +1,16 @@
 body {
   background-color: grey;
 }
+
+img {
+  max-height: 150px;
+  max-width: 150px;
+}
+
+div#allGames {
+  display: flex;
+}
+
+div.gameContainers {
+  display: flex;
+}
