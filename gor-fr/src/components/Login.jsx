@@ -37,9 +37,10 @@ export default function Login() {
 
   return (
     <div>
+      <h2>Login Page</h2>
       <form onSubmit={loginUser}>
         <div>
-          <label htmlFor="name">User: </label>
+          <label htmlFor="name">Username: </label>
           <input type="text" id="username" name="username" />
         </div>
         <div>
