@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 
 let baseUrl = process.env.REACT_APP_BACKEND_URL;
 
 export default function NewGames() {
   const [newGames, setNewGames] = useState([]);
-  const navigate = useNavigate();
 
   const getNewGames = () => {
     fetch(baseUrl + "/games/new")
@@ -33,7 +31,7 @@ export default function NewGames() {
           return (
             <li key={results.id}>
               <p>{results.name}</p>
-              <img src={results.background_image}></img>
+              <img src={results.background_image} alt="Game's Background"></img>
             </li>
           );
         })}

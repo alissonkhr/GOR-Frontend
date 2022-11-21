@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 let baseUrl = process.env.REACT_APP_BACKEND_URL;
 
 export default function Login() {
-  const [user, setUser] = useState();
-
+  const navigate = useNavigate();
   const loginUser = async (e) => {
     e.preventDefault();
     const url = baseUrl + "/user/login";
@@ -24,16 +23,13 @@ export default function Login() {
       });
 
       if (response.status === 200) {
-        console.log("this is the login:", response.data);
-        setUser(true);
+        console.log("this is the login:", loginBody.username);
         navigate("/games");
       }
     } catch (err) {
       console.log("Error => ", err);
     }
   };
-
-  const navigate = useNavigate();
 
   return (
     <div>

@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 let baseUrl = process.env.REACT_APP_BACKEND_URL;
 
 export default function Register() {
-  const [user, setUser] = useState();
-
+  const navigate = useNavigate();
   const register = async (e) => {
     e.preventDefault();
     const url = baseUrl + "/user/register";
@@ -21,7 +20,6 @@ export default function Register() {
         },
       });
       if (response.status === 201) {
-        setUser(true);
         console.log("user registered");
         navigate("/login");
       }
@@ -29,8 +27,6 @@ export default function Register() {
       console.log("Error => ", err);
     }
   };
-
-  const navigate = useNavigate();
 
   return (
     <div>
