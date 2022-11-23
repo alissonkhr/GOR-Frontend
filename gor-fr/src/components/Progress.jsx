@@ -1,9 +1,10 @@
 import React from "react";
+import { CircularProgress } from "@mui/material";
 
 export default function Progress() {
   return (
     <div>
-      <p>in progress...</p>
+      <CircularProgress size={100}/>
     </div>
   );
 }

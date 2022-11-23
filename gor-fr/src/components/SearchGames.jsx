@@ -1,13 +1,18 @@
 import React from "react";
+import { TextField } from "@mui/material";
 
 export default function SearchGames({ validateQGame }) {
+
   return (
-    <div>
-      <input
+      <TextField
         type="text"
-        placeholder="Search for a game"
-        onKeyPress={validateQGame}
+        id="q_game"
+        label="Search for a game"
+        margin="normal"
+        variant="outlined"
+        fullWidth={true}
+        style={{ width: "100%" }}
+        onKeyPress={(e) => validateQGame(e)}
       />
-    </div>
   );
 }

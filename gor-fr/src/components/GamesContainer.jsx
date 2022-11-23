@@ -21,10 +21,10 @@ export default function GamesContainer() {
   return (
     <Fragment>
       <div id="allGames">
-        <div className="gameContainers">
-          <div>
+          <div className="searchBar">
             <SearchGames validateQGame={validateQGame} />
           </div>
+          <div className="gameContainers">
           {!doneFetchSearchedGames ? (
             doneFetchPopularGames &&
             doneFetchUpcomingGames &&

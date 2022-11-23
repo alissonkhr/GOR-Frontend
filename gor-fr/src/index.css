@@ -7,10 +7,6 @@ img {
   max-width: 150px;
 }
 
-div#allGames {
-  display: flex;
-}
-
 div.gameContainers {
   display: flex;
 }
