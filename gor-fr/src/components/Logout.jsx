@@ -14,6 +14,8 @@ export default function Logout() {
       if (res.status === 200) {
         console.log("user logged out");
         navigate("/games");
+      } else {
+        navigate("/login");
       }
     } catch (err) {
       console.log("Error => ", err);

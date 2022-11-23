@@ -1,5 +1,6 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { NavLink } from "react-router-dom";
+import Logout from "./Logout";
 
 export default function Navi() {
   let activeStyle = {
@@ -7,41 +8,46 @@ export default function Navi() {
   };
 
   return (
-    <nav>
-      <ul>
-        <li>
-          <NavLink
-            to="/register"
-            style={({ isActive }) => (isActive ? activeStyle : undefined)}
-          >
-            REGISTER{" "}
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/login"
-            style={({ isActive }) => (isActive ? activeStyle : undefined)}
-          >
-            LOGIN{" "}
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/games"
-            style={({ isActive }) => (isActive ? activeStyle : undefined)}
-          >
-            GAMES{" "}
-          </NavLink>
-        </li>
-        <li>
+    <Fragment>
+      <nav>
+        <ul className="navBar">
+          <li>
+            <NavLink
+              to="/register"
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            >
+              REGISTER{" "}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/login"
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            >
+              LOGIN{" "}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/games"
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            >
+              GAMES{" "}
+            </NavLink>
+          </li>
+          {/*<li>
           <NavLink
             to="/logged_in"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             TEST LOGIN{" "}
           </NavLink>
-        </li>
-      </ul>
-    </nav>
+        </li>*/}
+          <li>
+            <Logout />
+          </li>
+        </ul>
+      </nav>
+    </Fragment>
   );
 }

@@ -10,3 +10,9 @@ img {
 div.gameContainers {
   display: flex;
 }
+
+ul.navBar {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
