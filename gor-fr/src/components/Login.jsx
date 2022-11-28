@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { TextField, Button } from "@mui/material";
 
 let baseUrl = process.env.REACT_APP_BACKEND_URL;
 
@@ -32,19 +33,38 @@ export default function Login() {
   };
 
   return (
-    <div>
-      <h2>Login Page</h2>
+    <div className="loginForm">
+      <h2>Login</h2>
       <form onSubmit={loginUser}>
         <div>
-          <label htmlFor="name">Username: </label>
-          <input type="text" id="username" name="username" />
+          <TextField
+            id="username"
+            label="Username"
+            variant="outlined"
+            type="text"
+            margin="normal"
+            color="secondary"
+          />
         </div>
         <div>
-          <label htmlFor="name">Password: </label>
-          <input type="password" id="password" name="password" />
+          <TextField
+            id="password"
+            label="Password"
+            variant="outlined"
+            type="password"
+            margin="normal"
+            color="secondary"
+          />
         </div>
         <div>
-          <input type="submit" value="Login" />
+          <Button
+            type="submit"
+            variant="contained"
+            color="secondary"
+            sx={{ fontFamily: "Handlee" }}
+          >
+            Login
+          </Button>
         </div>
       </form>
     </div>

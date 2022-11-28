@@ -4,7 +4,7 @@ import { CircularProgress } from "@mui/material";
 export default function Progress() {
   return (
     <div>
-      <CircularProgress size={100}/>
+      <CircularProgress size={100} color="secondary" />
     </div>
   );
 }

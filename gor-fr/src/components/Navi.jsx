@@ -1,52 +1,87 @@
 import React, { Fragment } from "react";
-import { NavLink } from "react-router-dom";
 import Logout from "./Logout";
+import { Button, Menu, MenuItem, Link } from "@mui/material";
 
 export default function Navi() {
-  let activeStyle = {
-    backgroundColor: "#91cbcc",
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
   return (
     <Fragment>
       <nav>
-        <ul className="navBar">
-          <li>
-            <NavLink
-              to="/register"
-              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+        <Button
+          sx={{ fontFamily: "Handlee" }}
+          id="basic-button"
+          aria-controls={open ? "basic-menu" : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? "true" : undefined}
+          onClick={handleClick}
+          color="secondary"
+        >
+          Menu
+        </Button>
+        <Menu
+          id="basic-menu"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          MenuListProps={{
+            "aria-labelledby": "basic-button",
+          }}
+        >
+          <MenuItem onClick={handleClose}>
+            <Link
+              href="/register"
+              underline="hover"
+              color="secondary"
+              sx={{ fontFamily: "Handlee" }}
             >
-              REGISTER{" "}
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/login"
-              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+              Register
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <Link
+              href="/login"
+              underline="hover"
+              color="secondary"
+              sx={{ fontFamily: "Handlee" }}
             >
-              LOGIN{" "}
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/games"
-              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+              Login
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <Link
+              href="/games"
+              underline="hover"
+              color="secondary"
+              sx={{ fontFamily: "Handlee" }}
             >
-              GAMES{" "}
-            </NavLink>
-          </li>
-          {/*<li>
-          <NavLink
-            to="/logged_in"
-            style={({ isActive }) => (isActive ? activeStyle : undefined)}
-          >
-            TEST LOGIN{" "}
-          </NavLink>
-        </li>*/}
-          <li>
+              Games
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <Link
+              href="/records"
+              underline="hover"
+              color="secondary"
+              sx={{ fontFamily: "Handlee" }}
+            >
+              Records
+            </Link>
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
             <Logout />
-          </li>
-        </ul>
+          </MenuItem>
+        </Menu>
+        <h1>Gamers, On Record</h1>
       </nav>
     </Fragment>
   );

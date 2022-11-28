@@ -1,18 +1,72 @@
 body {
-  background-color: grey;
+  background-image: linear-gradient(#7F8C8D, #000000);
+  background-repeat: no-repeat;
 }
 
-img {
-  max-height: 150px;
-  max-width: 150px;
-}
-
-div.gameContainers {
+.gameContainers {
   display: flex;
+  justify-content: center;
 }
 
-ul.navBar {
+ul {
+  background-image: linear-gradient(#e5bdf6, #d8dede);
+  padding-right: 40px;
+}
+
+.homepageGamesList {
+  background: transparent;
   list-style: none;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gameCardContent {
+  text-align: center;
+  color: #9c27b0;
+  text-shadow: 2px 2px 4px rgb(129, 124, 124);
+  font-family: "Handlee", cursive, Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(#d8dede, #e5bdf6);
+}
+
+.gameCardButton {
+  justify-content: center;
+  background-image: linear-gradient(#e5bdf6, #d8dede);
+}
+
+h1 {
+  font-family: "Satisfy", cursive, Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #9c27b0;
+  text-shadow: 2px 2px 4px rgb(255, 255, 255);
+}
+
+h2,
+h3 {
+  font-family: "Handlee", cursive, Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #9c27b0;
+  text-shadow: 2px 2px 4px rgb(255, 255, 255);
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.registrationForm,
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gameCardDiv,
+.postCardDiv {
+  padding: 10px;
+}
+
+.submitRecordButton {
+  display: flex;
+  justify-content: center;
 }

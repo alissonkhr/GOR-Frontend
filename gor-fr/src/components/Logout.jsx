@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Button } from "@mui/material";
 
 let baseUrl = process.env.REACT_APP_BACKEND_URL;
 
@@ -24,7 +25,14 @@ export default function Logout() {
 
   return (
     <div>
-      <button onClick={logoutUser}>Logout</button>
+      <Button
+        sx={{ fontFamily: "Handlee" }}
+        onClick={logoutUser}
+        variant="contained"
+        color="secondary"
+      >
+        Logout
+      </Button>
     </div>
   );
 }

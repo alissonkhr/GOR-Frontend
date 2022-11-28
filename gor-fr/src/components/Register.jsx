@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { TextField, Button } from "@mui/material";
 
 let baseUrl = process.env.REACT_APP_BACKEND_URL;
 
@@ -29,19 +30,38 @@ export default function Register() {
   };
 
   return (
-    <div>
-      <h2>Registration Page</h2>
+    <div className="registrationForm">
+      <h2>Registration</h2>
       <form id="register-form" onSubmit={register}>
         <div>
-          <label htmlFor="name">Username: </label>
-          <input type="text" id="username" name="username" />
+          <TextField
+            id="username"
+            label="Username"
+            variant="outlined"
+            type="text"
+            margin="normal"
+            color="secondary"
+          />
         </div>
         <div>
-          <label htmlFor="name">Password: </label>
-          <input type="password" id="password" name="password" />
+          <TextField
+            id="password"
+            label="Password"
+            variant="outlined"
+            type="password"
+            margin="normal"
+            color="secondary"
+          />
         </div>
         <div>
-          <input type="submit" value="Register" />
+          <Button
+            sx={{ fontFamily: "Handlee" }}
+            type="submit"
+            variant="contained"
+            color="secondary"
+          >
+            Register
+          </Button>
         </div>
       </form>
     </div>
