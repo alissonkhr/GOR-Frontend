@@ -13,7 +13,7 @@ let baseUrl = process.env.REACT_APP_BACKEND_URL;
 
 const style = {
   background: "linear-gradient(#e5bdf6, #d8dede)",
-  minWidth: 275
+  minWidth: 275,
 };
 
 export default function Post() {
@@ -52,24 +52,31 @@ export default function Post() {
             alignItems="center"
           >
             <div className="postCardDiv">
-              <Card
-                sx={style}
-              >
+              <Card sx={style}>
                 <CardContent>
                   <Typography
-                    sx={{ fontSize: 11 }}
+                    sx={{ fontSize: 11, fontFamily: "Handlee" }}
                     color="text.secondary"
                     gutterBottom
                   >
                     {timestamp}
                   </Typography>
-                  <Typography variant="h5" component="div">
+                  <Typography
+                    sx={{ fontFamily: "Handlee" }}
+                    variant="h5"
+                    component="div"
+                  >
                     {game}
                   </Typography>
-                  <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                  <Typography
+                    sx={{ mb: 1.5, fontFamily: "Handlee" }}
+                    color="text.secondary"
+                  >
                     recorded by {user.username}
                   </Typography>
-                  <Typography variant="body2">{message}</Typography>
+                  <Typography sx={{ fontFamily: "Handlee" }} variant="body2">
+                    {message}
+                  </Typography>
                 </CardContent>
                 <CardActions>
                   <Button

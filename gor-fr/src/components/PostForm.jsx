@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
-import { TextField, Button, Box, Modal } from "@mui/material";
+import { TextField, Button, Box, Modal, Typography } from "@mui/material";
 
 let baseUrl = process.env.REACT_APP_BACKEND_URL;
 
@@ -41,7 +41,7 @@ export default function PostForm() {
 
       if (response.status === 200) {
         console.log("this is the post message:", postBody.message);
-        navigate("/posts");
+        navigate("/records");
       } else {
         navigate("/login");
       }
@@ -69,7 +69,7 @@ export default function PostForm() {
         <Box sx={style}>
           <div className="postModal">
             <form onSubmit={createPost}>
-              <div>
+              <div className="textField">
                 <TextField
                   id="game"
                   label="The Game"
@@ -79,7 +79,7 @@ export default function PostForm() {
                   color="secondary"
                 />
               </div>
-              <div>
+              <div className="textField">
                 <TextField
                   id="message"
                   label="Your Thoughts Here..."
@@ -89,22 +89,27 @@ export default function PostForm() {
                   color="secondary"
                 />
               </div>
-              <div>
+              <div className="modalButton">
                 <Button
-                  sx={{ fontFamily: "Handlee" }}
+                  sx={{ fontFamily: "Handlee", mt: 2 }}
                   type="submit"
                   variant="contained"
                   color="secondary"
                 >
                   Put on Record
                 </Button>
-                <p>
-                  <small>
-                    If you don't see your record, refresh the page after you
-                    submit it!
-                  </small>
-                </p>
-              </div>
+                </div>
+                <Typography
+                  sx={{ fontFamily: "Handlee" }}
+                  color="text.secondary"
+                >
+                  <p>
+                    <small>
+                      If you don't see your record, refresh the page after you
+                      submit it!
+                    </small>
+                  </p>
+                </Typography>
             </form>
           </div>
         </Box>

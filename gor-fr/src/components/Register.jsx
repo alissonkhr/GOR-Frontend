@@ -53,9 +53,9 @@ export default function Register() {
             color="secondary"
           />
         </div>
-        <div>
+        <div className="submissionButton">
           <Button
-            sx={{ fontFamily: "Handlee" }}
+            sx={{ fontFamily: "Handlee", mt: 2 }}
             type="submit"
             variant="contained"
             color="secondary"

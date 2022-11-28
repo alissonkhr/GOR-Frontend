@@ -56,12 +56,12 @@ export default function Login() {
             color="secondary"
           />
         </div>
-        <div>
+        <div className="submissionButton">
           <Button
             type="submit"
             variant="contained"
             color="secondary"
-            sx={{ fontFamily: "Handlee" }}
+            sx={{ fontFamily: "Handlee", mt: 2 }}
           >
             Login
           </Button>

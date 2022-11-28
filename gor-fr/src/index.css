@@ -70,3 +70,8 @@ nav {
   display: flex;
   justify-content: center;
 }
+
+.postModal, .textField, .modalButton, .submissionButton {
+  display: flex;
+  justify-content: center;
+}
