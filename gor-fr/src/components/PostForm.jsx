@@ -98,18 +98,19 @@ export default function PostForm() {
                 >
                   Put on Record
                 </Button>
-                </div>
-                <Typography
-                  sx={{ fontFamily: "Handlee" }}
-                  color="text.secondary"
-                >
-                  <p>
-                    <small>
-                      If you don't see your record, refresh the page after you
-                      submit it!
-                    </small>
-                  </p>
-                </Typography>
+              </div>
+              <Typography
+                sx={{
+                  fontFamily: "Handlee",
+                  textAlign: "center",
+                  mt: 2,
+                  fontSize: 13,
+                }}
+                color="text.secondary"
+              >
+                If you don't see your record, refresh the page after you submit
+                it!
+              </Typography>
             </form>
           </div>
         </Box>

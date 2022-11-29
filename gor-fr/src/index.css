@@ -1,6 +1,7 @@
 body {
   background-image: linear-gradient(#7F8C8D, #000000);
   background-repeat: no-repeat;
+  margin-bottom: 28px;
 }
 
 .gameContainers {
@@ -74,4 +75,22 @@ nav {
 .postModal, .textField, .modalButton, .submissionButton {
   display: flex;
   justify-content: center;
+}
+
+.footer--pin {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  text-align: center;
+}
+
+.content-container {
+  min-height: calc(100vh - 12px);
+}
+
+.gameDetailsDescription {
+  font-family: "Handlee", cursive, Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #9c27b0;
 }

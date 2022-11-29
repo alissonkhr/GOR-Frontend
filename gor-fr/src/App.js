@@ -9,43 +9,47 @@ import EditForm from "./components/EditForm";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Navi from "./components/Navi";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="App">
-      <Navi />
-      <Routes>
-        <Route
-          exact
-          path="/"
-          element={
-            <GameContextProvider>
-              <GamesContainer />
-            </GameContextProvider>
-          }
-        />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/records" element={<PostsContainer />} />
-        <Route
-          path="/games"
-          element={
-            <GameContextProvider>
-              <GamesContainer />
-            </GameContextProvider>
-          }
-        />
-        <Route
-          path="/games/details/:id"
-          element={
-            <GameDetailContextProvider>
-              <GameDetailsContainer />
-            </GameDetailContextProvider>
-          }
-        />
-        <Route path="/records/:id" element={<PostContainer />} />
-        <Route path="/edit/:id" element={<EditForm />} />
-      </Routes>
+    <div>
+      <div className="content-container">
+        <Navi />
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <GameContextProvider>
+                <GamesContainer />
+              </GameContextProvider>
+            }
+          />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/records" element={<PostsContainer />} />
+          <Route
+            path="/games"
+            element={
+              <GameContextProvider>
+                <GamesContainer />
+              </GameContextProvider>
+            }
+          />
+          <Route
+            path="/games/details/:id"
+            element={
+              <GameDetailContextProvider>
+                <GameDetailsContainer />
+              </GameDetailContextProvider>
+            }
+          />
+          <Route path="/records/:id" element={<PostContainer />} />
+          <Route path="/edit/:id" element={<EditForm />} />
+        </Routes>
+        <Footer />
+      </div>
     </div>
   );
 }
