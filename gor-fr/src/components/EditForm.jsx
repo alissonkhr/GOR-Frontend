@@ -5,9 +5,28 @@ import { useParams, useNavigate } from "react-router-dom";
 let baseUrl = process.env.REACT_APP_BACKEND_URL;
 
 export default function EditForm() {
-  const [post, setPost] = useState([]);
+  const [post, setPost] = useState({});
+  const [posts, setPosts] = useState([]);
   const navigate = useNavigate();
   let { id } = useParams();
+
+  const getPosts = () => {
+    fetch(baseUrl + "/posts/")
+      .then((res) => {
+        if (res.status === 200) {
+          return res.json();
+        } else {
+          return [];
+        }
+      })
+      .then((data) => {
+        setPosts(data.data);
+      });
+  };
+
+  useEffect(() => {
+    getPosts();
+  }, []);
 
   const getOnePostById = (id) => {
     fetch(baseUrl + "/posts/" + id)
@@ -19,7 +38,7 @@ export default function EditForm() {
   };
 
   const editPost = (post) => {
-    fetch(baseUrl + "/posts/" + post, {
+    fetch(baseUrl + "/posts/" + post.id, {
       credentials: "include",
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -29,13 +48,13 @@ export default function EditForm() {
         if (res.status === 200) {
           return res.json();
         } else {
-          navigate("/login");
+          return [];
         }
       })
       .then((data) => {
         console.log(data.data);
-        getOnePostById(id);
-        navigate("/posts");
+        getPosts();
+        navigate("/records");
       });
   };
 
@@ -45,12 +64,12 @@ export default function EditForm() {
   }, []);
 
   const handleChange = (e) => {
-    setPost(() => ({ ...post, [e.target.name]: e.target.value }));
+    setPost((prev) => ({ ...post, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    editPost(id);
+    editPost(post);
     setPost({
       message: "",
     });
