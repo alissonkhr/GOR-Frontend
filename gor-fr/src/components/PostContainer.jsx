@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import { Typography, Button } from "@mui/material";
 
 let baseUrl = process.env.REACT_APP_BACKEND_URL;
 
@@ -26,24 +26,61 @@ export default function PostContainer() {
   return (
     <Fragment>
       <div>
-        <h3>Having Second Thoughts?</h3>
+        <h3>This Gamer Once Said...</h3>
         {post.id ? (
           <>
             <div>
-              <h2>Game:</h2>
-              <h3>{post.game}</h3>
-              <h2>Message:</h2>
-              <h3>{post.message}</h3>
-              <h2>Written by:</h2>
-              <h3>{post.user.username}</h3>
+              <Typography
+                sx={{ fontFamily: "Handlee", textAlign: "center" }}
+                variant="h5"
+              >
+                About {post.game},
+              </Typography>
+              <Typography
+                sx={{ fontFamily: "Handlee", textAlign: "center" }}
+                variant="body1"
+              >
+                "{post.message}"
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: "Handlee",
+                  textAlign: "center",
+                  fontSize: 12,
+                }}
+                variant="body1"
+                color="text.secondary"
+              >
+                -{post.user.username} recorded this on {post.timestamp}
+              </Typography>
             </div>
-            <div>
-              <button onClick={() => navigate(`/edit/${post.id}`)}>
-                Edit Record
-              </button>
-              <button onClick={() => navigate(`/delete/${post.id}`)}>
-                Delete Record
-              </button>
+            <div className="crudButtonDiv">
+              <Button
+                className="crudButton"
+                sx={{ fontFamily: "Handlee", m: 1 }}
+                size="small"
+                type="button"
+                color="secondary"
+                variant="contained"
+                onClick={() => {
+                  navigate(`/edit/${post.id}`);
+                }}
+              >
+                Edit
+              </Button>
+              <Button
+                className="crudButton"
+                sx={{ fontFamily: "Handlee", m: 1 }}
+                size="small"
+                type="button"
+                color="secondary"
+                variant="contained"
+                onClick={() => {
+                  navigate(`/delete/${post.id}`);
+                }}
+              >
+                Delete
+              </Button>
             </div>
           </>
         ) : null}

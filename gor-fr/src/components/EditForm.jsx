@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Typography, TextField, Button } from "@mui/material";
 import { useParams, useNavigate } from "react-router-dom";
 
 let baseUrl = process.env.REACT_APP_BACKEND_URL;
@@ -57,17 +58,41 @@ export default function EditForm() {
 
   return (
     <div>
-      <h3>Resubmit Thoughts Here</h3>
+      <h3>Record Resubmission</h3>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Your new message to the world: </label>
-        <input
-          id="message"
-          type="text"
-          name="message"
-          value={post.message}
-          onChange={handleChange}
-        />
-        <input type="submit" value="Update your Record" />
+        <Typography
+          sx={{
+            fontFamily: "Handlee",
+            textAlign: "center",
+            mt: 2,
+            fontSize: 13,
+          }}
+          color="text.secondary"
+        >
+          Having second thoughts? You can fix that here!
+        </Typography>
+        <div className="textField">
+          <TextField
+            id="message"
+            value={post.message}
+            variant="outlined"
+            type="text"
+            margin="normal"
+            color="secondary"
+            onChange={handleChange}
+            name="message"
+          />
+        </div>
+        <div className="modalButton">
+          <Button
+            sx={{ fontFamily: "Handlee", mt: 2 }}
+            type="submit"
+            variant="contained"
+            color="secondary"
+          >
+            Update Record
+          </Button>
+        </div>
       </form>
     </div>
   );

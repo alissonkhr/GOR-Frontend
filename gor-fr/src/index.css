@@ -1,5 +1,5 @@
 body {
-  background-image: linear-gradient(#7F8C8D, #000000);
+  background-image: linear-gradient(#7f8c8d, #000000);
   background-repeat: no-repeat;
   margin-bottom: 28px;
 }
@@ -39,7 +39,7 @@ h1 {
   font-family: "Satisfy", cursive, Arial, Helvetica, sans-serif;
   text-align: center;
   color: #9c27b0;
-  text-shadow: 2px 2px 4px rgb(255, 255, 255);
+  text-shadow: 2px 2px 4px rgb(212, 190, 190);
 }
 
 h2,
@@ -47,7 +47,7 @@ h3 {
   font-family: "Handlee", cursive, Arial, Helvetica, sans-serif;
   text-align: center;
   color: #9c27b0;
-  text-shadow: 2px 2px 4px rgb(255, 255, 255);
+  text-shadow: 2px 2px 4px rgb(212, 190, 190);
 }
 
 nav {
@@ -72,7 +72,10 @@ nav {
   justify-content: center;
 }
 
-.postModal, .textField, .modalButton, .submissionButton {
+.postModal,
+.textField,
+.modalButton,
+.submissionButton {
   display: flex;
   justify-content: center;
 }
@@ -93,4 +96,10 @@ nav {
   font-family: "Handlee", cursive, Arial, Helvetica, sans-serif;
   text-align: center;
   color: #9c27b0;
+}
+
+.crudButtonDiv {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
 }
