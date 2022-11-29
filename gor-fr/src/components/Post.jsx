@@ -13,7 +13,8 @@ let baseUrl = process.env.REACT_APP_BACKEND_URL;
 
 const style = {
   background: "linear-gradient(#e5bdf6, #d8dede)",
-  minWidth: 275,
+  minWidth: 350,
+  maxWidth: 350,
 };
 
 export default function Post() {

@@ -18,6 +18,20 @@ export default function PostContainer() {
       .catch((error) => console.log(error));
   };
 
+  const deletePost = async (id) => {
+    fetch(baseUrl + "/posts/" + id, {
+      credentials: "include",
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+    }).then((res) => {
+      const selectPost = [...post];
+      const findId = post.findIndex((post) => post.id === id);
+      selectPost.splice(findId, 1);
+      setPost(selectPost);
+    });
+    navigate("/records");
+  };
+
   useEffect(() => {
     getOnePostById(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -75,9 +89,7 @@ export default function PostContainer() {
                 type="button"
                 color="secondary"
                 variant="contained"
-                onClick={() => {
-                  navigate(`/delete/${post.id}`);
-                }}
+                onClick={() => deletePost(post.id)}
               >
                 Delete
               </Button>
