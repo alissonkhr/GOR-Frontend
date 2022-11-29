@@ -35,7 +35,7 @@ const GameDetails = ({
         </Grid>
         <Grid item xs={12}>
           <Paper elevation={2} sx={style}>
-            <Accordion>
+            <Accordion sx={style}>
               <AccordionSummary
                 expandIcon="^"
                 aria-controls="panel1a-content"

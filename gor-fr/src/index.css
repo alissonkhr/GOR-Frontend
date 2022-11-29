@@ -4,7 +4,7 @@ body {
   margin-bottom: 28px;
 }
 
-.gameContainers {
+.gameContainers, .gameDetailContainers {
   display: flex;
   justify-content: center;
 }
@@ -39,7 +39,7 @@ h1 {
   font-family: "Satisfy", cursive, Arial, Helvetica, sans-serif;
   text-align: center;
   color: #9c27b0;
-  text-shadow: 2px 2px 4px rgb(212, 190, 190);
+  text-shadow: 1px 1px 1px rgb(13, 13, 13);
 }
 
 h2,
@@ -47,7 +47,7 @@ h3 {
   font-family: "Handlee", cursive, Arial, Helvetica, sans-serif;
   text-align: center;
   color: #9c27b0;
-  text-shadow: 2px 2px 4px rgb(212, 190, 190);
+  text-shadow: 1px 1px 1px rgb(13, 13, 13);
 }
 
 nav {
@@ -81,11 +81,11 @@ nav {
 }
 
 .footer--pin {
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100vw;
   text-align: center;
+  text-shadow: 1px 1px 1px rgb(13, 13, 13);
 }
 
 .content-container {
@@ -102,4 +102,8 @@ nav {
   margin: 10px;
   display: flex;
   justify-content: center;
+}
+
+#basic-button {
+  text-shadow: 1px 1px 1px rgb(13, 13, 13);
 }

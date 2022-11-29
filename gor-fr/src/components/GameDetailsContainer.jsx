@@ -12,17 +12,19 @@ const GameDetailsContainer = () => {
   } = useContext(GameDetailContext);
   return (
     <Fragment>
-      {doneFetchGameDetails && gameDetails ? (
-        <Fragment>
-          <GameDetails
-            gameDetails={gameDetails}
-            gameScreenshots={gameScreenshots}
-            doneFetchGameScreenshots={doneFetchGameScreenshots}
-          />
-        </Fragment>
-      ) : (
-        <Progress />
-      )}
+      <div className="gameDetailContainers">
+        {doneFetchGameDetails && gameDetails ? (
+          <Fragment>
+            <GameDetails
+              gameDetails={gameDetails}
+              gameScreenshots={gameScreenshots}
+              doneFetchGameScreenshots={doneFetchGameScreenshots}
+            />
+          </Fragment>
+        ) : (
+          <Progress />
+        )}
+      </div>
     </Fragment>
   );
 };
