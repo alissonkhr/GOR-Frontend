@@ -6,6 +6,7 @@ let baseUrl = process.env.REACT_APP_BACKEND_URL;
 
 export default function EditForm() {
   const [post, setPost] = useState({});
+  // eslint-disable-next-line
   const [posts, setPosts] = useState([]);
   const navigate = useNavigate();
   let { id } = useParams();
